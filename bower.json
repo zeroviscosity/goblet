@@ -1,0 +1,6 @@
+{
+  "name": "goblet",
+  "dependencies": {
+    "normalize-css": "~3.0.1"
+  }
+}

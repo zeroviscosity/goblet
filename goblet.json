@@ -8,9 +8,10 @@
   ],
   "posts": [ 
     {
-      "title": "Sample",
+      "title": "Sample Post",
       "slug": "sample",
-      "created": ""
+      "created": "",
+      "tags": ["test", "one"]
     }
   ]
 }

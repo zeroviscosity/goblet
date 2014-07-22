@@ -4,6 +4,20 @@ html(lang="en")
     meta(charset="utf-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     title Goblet
-    link(rel="stylesheet", href="/css/app.css")
+    link(rel="stylesheet", href="/css/main.css")
   body 
+    nav.clearfix
+      div.zv-logo-top
+        div.zv-logo
+      div.zv-logo-bottom
+      ul.zv-nav
+        li
+          a(href="/") Home
+        if pages && pages.length
+          for page in pages
+            li
+              a(href="/page/#{page.slug}")=page.title
+
     block wrapper
+
+    footer.text-center &copy;#{(new Date()).getFullYear()} Kent English

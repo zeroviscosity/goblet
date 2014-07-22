@@ -2,3 +2,12 @@ extends layout
 
 block wrapper
   div
+    form(action="/", method="GET")
+      input(type="text", name="tag", value="#{tag}", placeholder="Search")
+  div
+    if posts && posts.length
+      for post in posts
+        div.post
+          a(href="/post/#{post.slug}")=post.title
+    else
+      div No posts found.

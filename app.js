@@ -1,9 +1,12 @@
 var express = require('express'),
     logger = require('morgan'),
+    goblet = require('./lib/goblet'),
     app = express(),
     port = process.env.NODE_PORT || 3000,
     env = process.env.NODE_ENV || 'development',
     silent = env === 'test';
+
+goblet.init();
 
 app.enable('verbose errors');
 
@@ -20,16 +23,20 @@ if (env === 'development') {
 }
 
 app.get('/', function(req, res) {
-    res.render('index');
+    var tag = (req.query.tag) ? req.query.tag.toLowerCase() : '',
+        posts = (tag) ? goblet.posts.filter(function(post) {
+            return post.tags.indexOf(tag) > -1;
+        }) : goblet.posts;
+    
+    res.render('index', {
+        pages: goblet.pages,
+        posts: posts,
+        tag: tag
+    });
 });
 
-app.get('/page/:slug', function(req, res) { 
-    res.render('pages/' + req.params.slug);
-});
-
-app.get('/post/:slug', function(req, res) { 
-    res.render('posts/' + req.params.slug);
-});
+app.get('/page/:slug', goblet.page);
+app.get('/post/:slug', goblet.post);
 
 app.get('/404', function(req, res, next) {
     next();
@@ -59,6 +66,7 @@ app.use(function(req, res, next){
 });
 
 app.use(function(err, req, res, next) {
+    console.error(err);
     res.status(err.status || 500);
     res.render('errors/500', { error: err });
 });
@@ -66,3 +74,4 @@ app.use(function(err, req, res, next) {
 app.listen(port, function() {
     console.log('Listening on port ' + port);
 });
+

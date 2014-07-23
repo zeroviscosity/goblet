@@ -15,8 +15,8 @@ html, body {
 }
 
 footer {
-  font-size: rem-calc(12);
-  margin: rem-calc(60) 0 rem-calc(10) 0;
+  font-size: 12px;
+  margin: 60px 0 10px 0;
 }
 
 a {
@@ -35,11 +35,6 @@ blockquote {
 
 .panel.browsehappy {
   margin: 0;
-}
-
-.zv-overlay {
-  @extend .reveal-modal-bg;
-  display: block;
 }
 
 .zv-container {

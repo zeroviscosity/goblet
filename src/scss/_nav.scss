@@ -6,12 +6,16 @@ nav {
     height: 35px;
     position: relative;
     .zv-logo {
-      background: transparent url(/assets/images/logo-60.png) no-repeat left top;
+      @include single-transition();
+      background: transparent url(/img/logo-60.png) no-repeat left top;
       height: 60px;
       left: 30px;
       position: absolute;
       top: 10px;
       width: 60px;
+      &:hover {
+        background: transparent url(/img/avatar-60.png) no-repeat left top;
+      }
     }
   }
   .zv-logo-bottom {
@@ -25,13 +29,11 @@ nav {
     li {
       float: left;
       a {
-        //@include transition-property(all);
-        //@include transition-duration(0.3s);
-        //@include transition-timing-function(linear);
+        @include single-transition(all, 0.3s);
         color: $background-color;
         display: block;
-        margin: 0 rem-calc(10) 0 0;
-        padding: rem-calc(5 8 5 8);
+        margin: 0 10px 0 0;
+        padding: 5px 8px 5px 8px;
         &:hover {
           background-color: $tertiary-color;
           color: $primary-color;
@@ -41,7 +43,7 @@ nav {
   }
 }
 
-@media #{$medium-up} {
+@media #{$medium} {
   nav {
     float: left;
     height: 100%;
@@ -52,12 +54,15 @@ nav {
       height: 35px;
       position: relative;
       .zv-logo {
-        background: transparent url(/assets/images/logo-60.png) no-repeat left top;
+        background: transparent url(/img/logo-60.png) no-repeat left top;
         height: 60px;
         left: 30px;
         position: absolute;
         top: 10px;
         width: 60px;
+        &:hover {
+          background: transparent url(/img/avatar-60.png) no-repeat left top;
+        }
       }
     }
     .zv-logo-bottom {
@@ -65,13 +70,13 @@ nav {
       height: 10px;
     }
     .zv-nav {
-      border-top: rem-calc(1) solid $tertiary-color;
+      border-top: 1px solid $tertiary-color;
       margin: 40px 0 7px 0;
       li {
         float: none;
         a {
           background-color: $secondary-color;
-          border-bottom: rem-calc(1) solid $tertiary-color;
+          border-bottom: 1px solid $tertiary-color;
           margin: 0;
         }
       }
@@ -79,17 +84,20 @@ nav {
   }
 }
 
-@media #{$large-up} {
+@media #{$large} {
   nav {
     width: 240px;
     .zv-logo-top {
       height: 75px;
       .zv-logo {
-        background: transparent url(/assets/images/logo-120.png) no-repeat left top;
+        background: transparent url(/img/logo-120.png) no-repeat left top;
         height: 120px;
         left: 60px;
         top: 25px;
         width: 120px;
+        &:hover {
+          background: transparent url(/img/avatar-120.png) no-repeat left top;
+        }
       }
     }
     .zv-logo-bottom {

@@ -1,6 +1,16 @@
 extends layout
 
+block title
+  title=post.title
+
 block wrapper
-  div.post
+  div.zv-post
+    h1=post.title
+    div.clearfix.zv-meta
+      div.left.zv-date=post.created
+      div.right.zv-tags
+        for tag in post.tags
+          a.left.zv-tag(href="/?tag=#{tag}")=tag
+
     block content
 

@@ -1,16 +1,19 @@
 {
+  "site": {
+    "title": "Kent English"
+  },
   "pages": [
     {
       "title": "About",
       "slug": "about",
-      "created": ""
+      "created": "Today"
     }
   ],
   "posts": [ 
     {
       "title": "Sample Post",
       "slug": "sample",
-      "created": "",
+      "created": "Yesterday",
       "tags": ["test", "one"]
     }
   ]

@@ -3,7 +3,7 @@ html(lang="en")
   head 
     meta(charset="utf-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    title Goblet
+    title=title
     link(rel="stylesheet", href="/css/main.css")
   body 
     nav.clearfix
@@ -18,6 +18,12 @@ html(lang="en")
             li
               a(href="/page/#{page.slug}")=page.title
 
-    block wrapper
+    div.zv-container
+      block wrapper
 
-    footer.text-center &copy;#{(new Date()).getFullYear()} Kent English
+    footer &copy;2014 Kent English
+
+    script(src="/js/lib/fastclick.js")
+    script(src="/js/lib/highlight.pack.js")
+    script.
+      hljs.initHighlightingOnLoad();

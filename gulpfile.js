@@ -2,23 +2,28 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     nodemon = require('gulp-nodemon'),
     jshint = require('gulp-jshint'),
+    livereload = require('gulp-livereload'),
     paths = {
-        angular: ['./src/js/**/*.js'],
+        js: ['./src/js/**/*.js'],
         node: ['./*.js', './lib/**/*.js'],
-        sass: './src/scss/*.scss',
+        sass: [
+            './bower_components/foundation/scss/normalize.scss', 
+            './src/scss/*.scss'
+        ],
         css: './public/css'
     };
 
 gulp.task('lint', function () {
-    gulp.src(paths.angular.concat(paths.node))
+    gulp.src(paths.js.concat(paths.node))
         .pipe(jshint())
         .pipe(jshint.reporter('jshint-stylish'));
 });
 
 gulp.task('sass', function () {
     gulp.src(paths.sass)
-        .pipe(sass({ outputStyle: 'compressed' }))
-        .pipe(gulp.dest(paths.css));
+        .pipe(sass({ outputStyle: 'expanded' }))
+        .pipe(gulp.dest(paths.css))
+        .pipe(livereload());
 });
 
 gulp.task('develop', function () {

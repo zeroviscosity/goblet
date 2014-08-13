@@ -1,10 +1,8 @@
 extends layout
 
-block title
-  title=page.title
-
 block wrapper
   div.zv-page
     h1=page.title
 
-    block content
+    div.zv-content
+      block content

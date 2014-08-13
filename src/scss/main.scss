@@ -3,6 +3,7 @@
 @import url("//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700");
 
 @import
+  "../../bower_components/foundation/scss/normalize",
   "../../bower_components/foundation/scss/foundation/components/global";
 
 $primary-color: #88D21E;
@@ -21,8 +22,11 @@ html, body {
   background-color: $background-color;
 }
 
-code {
-  font-size: 14px;
+pre {
+  margin-bottom: 20px;
+  code {
+    font-size: 14px;
+  }
 }
 
 footer {
@@ -53,6 +57,9 @@ blockquote {
 .zv-container {
   .zv-post, .zv-page, .zv-list, .zv-error {
     padding: 5px 12px 20px 12px;
+    .zv-content {
+      margin: 20px 0 40px 0;
+    }
   }
   .zv-list {
     .zv-list-entry {

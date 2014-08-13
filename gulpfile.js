@@ -6,10 +6,7 @@ var gulp = require('gulp'),
     paths = {
         js: ['./src/js/**/*.js'],
         node: ['./*.js', './lib/**/*.js'],
-        sass: [
-            './bower_components/foundation/scss/normalize.scss', 
-            './src/scss/*.scss'
-        ],
+        sass: ['./src/scss/*.scss'],
         css: './public/css'
     };
 

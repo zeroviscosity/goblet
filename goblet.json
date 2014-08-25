@@ -3,19 +3,6 @@
     "title": "Kent English",
     "url": "http://kentenglish.ca"
   },
-  "pages": [
-    {
-      "title": "About",
-      "slug": "about",
-      "created": "Today"
-    }
-  ],
-  "posts": [ 
-    {
-      "title": "Sample Post",
-      "slug": "sample",
-      "created": "Yesterday",
-      "tags": ["test", "one"]
-    }
-  ]
+  "pages": [],
+  "posts": []
 }

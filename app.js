@@ -2,7 +2,7 @@ var express = require('express'),
     logger = require('morgan'),
     goblet = require('./lib/goblet'),
     app = express(),
-    port = process.env.NODE_PORT || 3000,
+    port = process.env.NODE_PORT || 3001,
     env = process.env.NODE_ENV || 'development',
     silent = env === 'test';
 

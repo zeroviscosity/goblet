@@ -1,7 +1,6 @@
 @charset "UTF-8";
 
-@import url("//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700");
-
+@import url("//fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700");
 @import
   "../../bower_components/foundation/scss/normalize",
   "../../bower_components/foundation/scss/foundation/components/global";
@@ -11,6 +10,8 @@ $secondary-color: #727272;
 $tertiary-color: #575757;
 $background-color: #efefef;
 $body-font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$header-font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$header-font-weight: 300;
 
 @import
   "../../bower_components/foundation/scss/foundation/components/panels",
@@ -20,6 +21,7 @@ $body-font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial,
 
 html, body {
   background-color: $background-color;
+  font-family: $body-font-family;
 }
 
 pre {

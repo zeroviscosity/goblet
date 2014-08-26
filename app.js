@@ -1,7 +1,7 @@
 var express = require('express'),
     goblet = require('./lib/goblet'),
     app = express(),
-    port = process.env.NODE_PORT || 3000;
+    port = process.env.NODE_PORT || 3001;
 
 app.use(express.static(__dirname + '/public'));
 

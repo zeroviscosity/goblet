@@ -17,7 +17,7 @@
     "gulp-jshint": "^2.1.0",
     "gulp-livereload": "^4.0.2",
     "gulp-nodemon": "^2.5.0",
-    "gulp-sass": "^4.1.0",
+    "gulp-sass": "^5.1.0",
     "jshint-stylish": "^2.2.1"
   },
   "licenses": [
